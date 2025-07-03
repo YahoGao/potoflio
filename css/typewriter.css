@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('potoflio/fonts/阿里巴巴普惠体.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+.app-typewriter {
+  width: 100vw;
+  max-width: 100vw;
+  font-family: 'AlibabaPuHuiTi', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15vh;
+  flex-wrap: nowrap;
+  white-space: normal;
+}
+.app-typewriter-title-wrap {
+  position: relative;
+  display: inline-block;
+}
+.app-typewriter p {
+  margin: 0 0 18px 0;
+  text-align: center;
+  color: #111;
+  font-size: 2vw;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'AlibabaPuHuiTi', sans-serif;
+  display: block;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+.app-typewriter-title-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 17px;
+  height: 1.5em;
+  background: #0018ff;
+  z-index: 1;
+  border-radius: 2px;
+  margin-bottom: 0;
+  pointer-events: none;
+}
+.typing {
+  color: #111;
+  font-weight: bold;
+  font-size: 1vw;
+  letter-spacing: 0.1em;
+  font-family: 'AlibabaPuHuiTi', sans-serif;
+  border-right: 2px solid #111;
+  white-space: nowrap;
+  animation: blink 0.7s steps(1) infinite;
+  display: block;
+  text-align: center;
+  min-height: 2em;
+}
+@keyframes blink {
+  0%, 100% { border-color: #111; }
+  50% { border-color: transparent; }
+}
+@media (max-width: 600px) {
+  .app-typewriter {
+    margin-top: 10vh;
+  }
+  .app-typewriter p {
+    font-size: 8vw;
+  }
+  .typing {
+    font-size: 5vw;
+  }
+}
