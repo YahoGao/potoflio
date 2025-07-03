@@ -1,0 +1,226 @@
+.macbook {
+  width: 150px;
+  height: 96px;
+  margin: 0 auto 140px auto;
+  position: relative;
+  perspective: 500px;
+  z-index: 10;
+}
+.shadow {
+  position: absolute;
+  width: 60px;
+  height: 0px;
+  left: 50%;
+  top: 160px;
+  transform: translateX(-50%) rotateX(80deg);
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+  animation: shadow-mac infinite 7s ease;
+}
+.inner {
+  z-index: 20;
+  position: absolute;
+  width: 150px;
+  height: 96px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg);
+  animation: rotate-mac infinite 7s ease;
+}
+.screen {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 3px;
+  background: #333;
+  transform-style: preserve-3d;
+  transform-origin: 50% 93px;
+  animation: lid-screen-mac infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: inset 0 3px 7px #333;
+}
+.screen .logo {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  left: 50%;
+  top: 50%;
+  margin: -12px 0 0 -10px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 24px;
+  user-select: none;
+}
+.screen .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 3px;
+  background: #333;
+  transform: translateZ(2px);
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.screen .face-one .camera {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: hsl(0, 3%, 19%);
+  position: absolute;
+  left: 50%;
+  top: 1px;
+  margin-left: -1.5px;
+}
+.screen .face-one .display {
+  width: 142px;
+  height: 80px;
+  margin: 4px auto;
+  background: #000;
+  border-radius: 1px;
+  position: relative;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+}
+.screen .face-one .display .shade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 74px;
+  background: linear-gradient(-135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 47%, rgba(255, 255, 255, 0) 48%);
+  animation: screen-shade-mac infinite 7s ease;
+  background-size: 300px 200px;
+  background-position: 0px 0px;
+}
+.screen .face-one span {
+  position: absolute;
+  top: 85px;
+  left: 63px;
+  font-size: 6px;
+  color: #666;
+}
+.body {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 3px;
+  background: #333;
+  transform-style: preserve-3d;
+  transform-origin: 50% bottom;
+  transform: rotateX(-90deg);
+  animation: lid-body-mac infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.body .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 3px;
+  background: #333;
+  transform: translateZ(-2px);
+  background-image: linear-gradient(30deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.body .touchpad {
+  width: 40px;
+  height: 31px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 3px;
+  margin: -44px 0 0 -18px;
+  background: #333;
+  background-image: linear-gradient(30deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: inset 0 0 3px #888;
+}
+.body .keyboard {
+  width: 130px;
+  height: 45px;
+  position: absolute;
+  left: 7px;
+  top: 41px;
+  border-radius: 3px;
+  background: #333;
+  background-image: linear-gradient(30deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: inset 0 0 3px #777;
+  padding: 0 0 0 2px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.keyboard .key {
+  width: 6px;
+  height: 6px;
+  background: #444;
+  margin: 1px;
+  border-radius: 2px;
+  box-shadow: 0 -2px 0 #222;
+}
+.key.space {
+  width: 45px;
+}
+.key.f {
+  height: 3px;
+}
+.body .pad {
+  width: 5px;
+  height: 5px;
+  background: #333;
+  border-radius: 100%;
+  position: absolute;
+}
+.pad.one { left: 20px; top: 20px; }
+.pad.two { right: 20px; top: 20px; }
+.pad.three { right: 20px; bottom: 20px; }
+.pad.four { left: 20px; bottom: 20px; }
+@keyframes rotate-mac {
+  0% { transform: rotateX(-20deg); }
+  5% { transform: rotateX(-20deg) rotateY(-20deg); }
+  20% { transform: rotateX(30deg) rotateY(200deg); }
+  25% { transform: rotateX(-60deg) rotateY(150deg); }
+  60% { transform: rotateX(-20deg) rotateY(130deg); }
+  65% { transform: rotateX(-20deg) rotateY(120deg); }
+  80% { transform: rotateX(-20deg) rotateY(375deg); }
+  85% { transform: rotateX(-20deg) rotateY(357deg); }
+  87% { transform: rotateX(-20deg) rotateY(360deg); }
+  100% { transform: rotateX(-20deg) rotateY(360deg); }
+}
+@keyframes lid-screen-mac {
+  0% { transform: rotateX(0deg); }
+  5% { transform: rotateX(50deg); }
+  20% { transform: rotateX(-90deg); }
+  25% { transform: rotateX(15deg); }
+  30% { transform: rotateX(-5deg); }
+  38% { transform: rotateX(5deg); }
+  48% { transform: rotateX(0deg); }
+  90% { transform: rotateX(0deg); }
+  100% { transform: rotateX(0deg); }
+}
+@keyframes lid-body-mac {
+  0%,100% { transform: rotateX(-90deg); }
+  50% { transform: rotateX(-90deg); }
+}
+@keyframes screen-shade-mac {
+  0% { background-position: -20px 0px; }
+  5% { background-position: -40px 0px; }
+  20% { background-position: 200px 0; }
+  50% { background-position: -200px 0; }
+  80% { background-position: 0px 0px; }
+  85% { background-position: -30px 0; }
+  90% { background-position: -20px 0; }
+  100% { background-position: -20px 0px; }
+}
+@keyframes shadow-mac {
+  0% { box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3); }
+  5% { box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3); }
+  20% { box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.3); }
+  25% { box-shadow: 0 0 35px 15px rgba(0, 0, 0, 0.1); }
+  60% { box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3); }
+  100% { box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3); }
+} 
